@@ -1,0 +1,188 @@
+
+/* 重置样式 */
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei UI",Helvetica,sans-serif;
+    font-size: 1.5625vm;
+}
+span {
+    display: block;
+}
+
+/* 页面样式 */
+html,body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.pages{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-size: 3.535vh;
+    -webkit-transform: translate3d(0px, 100%, 0px);
+       -moz-transform: translate3d(0px, 100%, 0px);
+            transform: translate3d(0px, 100%, 0px);
+    -webkit-transition: -webkit-transform .5s ease-out;
+          -moz-transition: -moz-transform .5s ease-out;
+                    transition: transform .5s ease-out;
+}
+
+/* 音乐播放 */
+.music {
+    position: fixed;
+    top: 3vh;
+    right: 4vw;
+    z-index: 5;
+    width: 13vw;
+    height: 13vw;
+    border: 4px solid #efa116;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.music > .music_pointer {
+    position: absolute;
+    top: 24%;
+    right: 2.5%;
+    z-index: 5;
+    width: 34.421%;
+    height: 34.421%;
+    background: url("../images/music_pointer.png") no-repeat center center;
+    background-size: 100%;
+}
+.music > .music_disc {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    width: 79%;
+    margin: auto;
+    background: url("../images/music_disc.png") no-repeat center center;
+    background-size: 100%;
+}
+
+.music > .play {
+    -webkit-animation: music_disc 4s linear infinite;
+       -moz-animation: music_disc 4s linear infinite;
+         -o-animation: music_disc 4s linear infinite;
+           animation:  music_disc 4s linear infinite;
+}
+@-webkit-keyframes music_disc {
+    0%  {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@-ms-keyframes music_disc {
+    0%  {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@-o-keyframes music_disc {
+    0%  {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes music_disc {
+    0%  {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* 浮层 */
+.page_hidden {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #8e909f;
+    opacity: 0;
+}
+
+.play .page_hidden {
+    -webkit-animation: page_hidden 2s ease-out .8s forwards;
+            animation: page_hidden 2s ease-out .8s forwards;
+}
+@keyframes page_hidden {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: .5;
+    }
+}
+@-webkit-keyframes page_hidden {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: .5;
+    }
+}
+
+/* 箭头 */
+.page:after {
+    position: absolute;
+    top: 93vh;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    content: "";
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 20px solid #fff;
+    opacity: 0;
+}
+.play:after {
+    -webkit-animation: shine 1.2s ease-out 3.2s infinite;
+    animation: shine 1.2s ease-out 3.2s infinite;
+}
+@keyframes shine {
+    0% {
+        opacity: .5;
+        top: 93vh;
+    }
+    100% {
+        opacity: 0;
+        top: 89vh;
+    }
+}
+@-webkit-keyframes shine {
+    0% {
+        opacity: 0;
+        top: 93vh;
+    }
+    100% {
+        opacity: .5;
+        top: 89vh;
+    }
+}
