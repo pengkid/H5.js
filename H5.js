@@ -40,7 +40,7 @@ for(var i = 1; i <this.$el.children.length ; i++){
 H5.prototype.bindEvents = function() {
   var self = this;
 
-  window.addEventListener('resize orientationchange', this.resize.bind(this), false);
+  window.addEventListener('resize', this.resize.bind(this), false);
 
   'touchstart touchmove touchend touchcancel'.split(' ').forEach(function(evn) {
     self.$el.addEventListener(evn, self[evn].bind(self), false)
