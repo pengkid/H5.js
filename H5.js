@@ -186,7 +186,6 @@ H5.prototype.go = function(i) {
 
   if (i === this.current || i < 0 || i >= total) return;
     // 滑动完成调用方法
-  typeof this.options.tranSetionEnd === 'function' && this.options.tranSetionEnd.call(this);
   this.current = i;
 
   this['set' + this.swipe](current /*初始的current为0*/ , -d * (this.swipe === 'X' ? this.width : this.height));
