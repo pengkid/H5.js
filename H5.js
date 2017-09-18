@@ -1,6 +1,5 @@
 
-var H5 = function(el, swipe, options) {
-  this.options = options || {};
+var H5 = function(el, swipe) {
   this.current = 0;
   this.pageX;
   this.pageY;
